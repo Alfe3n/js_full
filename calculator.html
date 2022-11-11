@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span id="n1"></span>
+    <span id="n2"></span>
+    <p>
+        <button id="sumbtn" onclick="sum()">sum</button>
+    <button id="subbtn" onclick="sub()">sub</button>
+    <button id="multbtn" onclick="mult()">multiply</button>
+    <button id="divbtn" onclick="div()">divide</button>
+
+    <br>
+
+    </p>
+    <span id="result"></span>
+
+    <script>
+        let num1=2
+        let num2=5
+        let num=0
+        document.getElementById("n1").textContent=num1
+        document.getElementById("n2").textContent=num2
+        resultEl=document.getElementById("result")
+       function sum()
+       {
+        num=num1+num2
+       resultEl.textContent="sum:"+num
+
+       }
+       function sub()
+       {
+        num=num1-num2
+       resultEl.textContent="difference "+num
+
+       }
+       function mult()
+       {
+        num=num1*num2
+       resultEl.textContent="product "+num
+
+       }
+       function div()
+       {
+        num=num1/num2
+       resultEl.textContent="quotient "+num
+
+       }
+       
+    </script>
+</body>
+</html>

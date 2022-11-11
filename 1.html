@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="apple_shelf"></div>
+    <div id="orange_shelf"></div>
+    <script>
+     
+      
+     let fruit=['apple',"orange","apple","apple","orange"]
+let orangeShelf=document.getElementById("apple_shelf")
+let appleShelf=document.getElementById("orange_shelf")
+for(i=0;i<fruit.length;++i)
+{
+    if(fruit[i]==="orange")
+    {
+        orangeShelf.textContent+=fruit[i]+" "
+    }
+    else
+    appleShelf.textContent+=fruit[i]+" "
+}
+    </script>
+    
+</body>
+</html>
