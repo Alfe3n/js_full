@@ -1,25 +1,46 @@
 
 let myLeads=[]
 const text_input_el=document.getElementById("text_input")
-let list_el=document.getElementById("list")
+const list_el=document.getElementById("list")
 const save_btn_el=document.getElementById("save_btn")
-localStorage.clear()
-save_btn_el.addEventListener("click",function(){
-  myLeads.push(text_input_el.value)
-  renderLeads()
-  text_input_el.value=" "
+const delete_btn_el=document.getElementById("delete_btn")
+const savetab_btn_el=document.getElementById("savetab_btn")
+const tabs=[{url:"https://www.youtube.com/watch?v=jS4aFq5-91M&t=24810s&ab_channel=freeCodeCamp.org"}]
+savetab_btn_el.addEventListener("click",function(){
+  console.log(tabs[0].url)
 
-}
-)
-function renderLeads(){
+})
+const leadsFromLocalStorage=JSON.parse(localStorage.getItem("myLeads"))
+  if(leadsFromLocalStorage)
+    {
+      myLeads=leadsFromLocalStorage
+    render(myLeads)
+    }
+    
+function render(Leads){
   listItems=" "
-  for(i=0;i<myLeads.length;++i)
+  for(i=0;i<Leads.length;++i)
   listItems+=`
   <li>
-      <a href='${myLeads[i]}' target='_blank'>
-        ${myLeads[i]}
+      <a href='${Leads[i]}' target='_blank'>
+        ${Leads[i]}
       </a>
   </li>
   `
   list_el.innerHTML=listItems
 }
+    delete_btn_el.addEventListener("click",function(){
+      localStorage.clear()
+      myLeads=[]
+      render(myLeads)
+    })
+
+save_btn_el.addEventListener("click",function(){
+  myLeads.push(text_input_el.value)
+  text_input_el.value=" "
+  localStorage.setItem("myLeads",JSON.stringify(myLeads))
+  render(myLeads)
+  
+}
+)
+
