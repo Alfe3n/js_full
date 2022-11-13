@@ -5,13 +5,19 @@ const list_el=document.getElementById("list")
 const save_btn_el=document.getElementById("save_btn")
 const delete_btn_el=document.getElementById("delete_btn")
 const savetab_btn_el=document.getElementById("savetab_btn")
-const tabs=[{url:"https://www.youtube.com/watch?v=jS4aFq5-91M&t=24810s&ab_channel=freeCodeCamp.org"}]
-savetab_btn_el.addEventListener("click",function(){
-  console.log(tabs[0].url)
+const tabs=[]
 
+
+savetab_btn_el.addEventListener("click",function(){
+  chrome.tabs.query({currentWindow: true, active: true}, function(tabs){
+    myLeads.push(tabs[0].url);
+});
+  localStorage.setItem("myLeads",JSON.stringify(myLeads))
+  render(myLeads)
 })
+
 const leadsFromLocalStorage=JSON.parse(localStorage.getItem("myLeads"))
-  if(leadsFromLocalStorage)
+  if(leadsFromLocalStorage) 
     {
       myLeads=leadsFromLocalStorage
     render(myLeads)
