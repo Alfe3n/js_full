@@ -1,0 +1,39 @@
+body{
+    background-image:url("pic.jpg") ;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    
+
+}
+#whole{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+h1,h2,#previous{
+    text-align: center;
+}
+.box{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+}
+button{
+    border-style: none;
+    border-radius: 6px;
+}
+#save_btn{
+    background-color: green;
+    margin-top: 10PX;
+    padding: 8px 40px 8px 40px;
+}
+#increment_btn{
+    padding: 8px 18px 8px 18px ;
+    background-color: red;
+}

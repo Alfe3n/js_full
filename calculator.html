@@ -7,18 +7,51 @@
     <title>Document</title>
 </head>
 <body>
-    <span id="n1"></span>
-    <span id="n2"></span>
-    <p>
+    <div class="container">
+        <div class="input">
+            <span id="n1"></span>
+            <span id="n2"></span>
+        </div>
+        <div class="row">
         <button id="sumbtn" onclick="sum()">sum</button>
-    <button id="subbtn" onclick="sub()">sub</button>
-    <button id="multbtn" onclick="mult()">multiply</button>
-    <button id="divbtn" onclick="div()">divide</button>
+        <button id="subbtn" onclick="sub()">sub</button>
+        <button id="multbtn" onclick="mult()">multiply</button>
+        </div>
+        <div class="div">
+        <button id="divbtn" onclick="div()">divide</button>
+        </div>    
+        <span id="result"></span>
 
-    <br>
+    </div>
+   
+    <style>
+        #subbtn{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+    button{
+        background-color: aquamarine;
+        border-style: none;
+        padding: 10px;
+        border-radius: 5px;
+    }
+        .input{
+            margin-bottom: 20px;
+        }
+        .div{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
 
-    </p>
-    <span id="result"></span>
+
+    </style>
 
     <script>
         let num1=2
