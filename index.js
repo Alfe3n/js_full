@@ -7,7 +7,7 @@ let isAlive=true
 hasBlackJack=false
 let message=""
 let PLAYER={
-    name:"alfeen",
+    name:"Alfeen",
     chips:100
 }
 
